@@ -16,10 +16,6 @@ def baixar_zip():
     print("Baixando arquivo com gdown...")
     gdown.download(URL, ZIP_PATH, quiet=False)
 
-    if not zipfile.is_zipfile(ZIP_PATH):
-        raise Exception("O arquivo baixado não é um ZIP válido. Verifique permissões ou ID.")
-    print("Download concluído!")
-
 def extrair_zip():
     print("Extraindo arquivos...")
     with zipfile.ZipFile(ZIP_PATH, "r") as zip_ref:
